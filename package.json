@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "kunkels.me",
+  "version": "0.0.0",
+  "repository": "git@github.com:chiel/kunkels.me.git",
+  "author": "chielkunkels",
+  "main": "dist/server"
+}
