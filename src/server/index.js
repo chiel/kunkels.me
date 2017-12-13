@@ -7,4 +7,6 @@ app.get('/', (req, res) => {
 });
 
 const port = process.env.PORT || 14728;
-app.listen(port, () => { console.info(`Listening on port ${port}`); });
+app.listen(port, () => {
+	console.info(`Listening on port ${port}`);
+});
