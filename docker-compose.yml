@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  watch_build:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    command: yarn watch:build
+    volumes:
+    - .:/app
+
+  watch_server:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    command: yarn watch:server
+    depends_on:
+    - watch_build
+    ports:
+    - 14728:14728
+    volumes:
+    - .:/app
