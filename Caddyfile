@@ -1,0 +1,5 @@
+localhost:80 {
+	gzip
+	header / -Server
+	proxy / app:14728
+}

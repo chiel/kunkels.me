@@ -1,7 +1,17 @@
 version: '3'
 
 services:
-  watch_build:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    command: yarn watch:server
+    depends_on:
+    - build
+    volumes:
+    - .:/app
+
+  build:
     build:
       context: .
       dockerfile: Dockerfile-dev
@@ -9,14 +19,9 @@ services:
     volumes:
     - .:/app
 
-  watch_server:
-    build:
-      context: .
-      dockerfile: Dockerfile-dev
-    command: yarn watch:server
-    depends_on:
-    - watch_build
+  caddy:
+    image: joshix/caddy
     ports:
-    - 14728:14728
+    - 14728:80
     volumes:
-    - .:/app
+    - .:/var/www/html
