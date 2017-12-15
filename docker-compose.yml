@@ -25,3 +25,11 @@ services:
     - 14728:80
     volumes:
     - .:/var/www/html
+
+  webpack:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    command: yarn watch:client
+    volumes:
+    - .:/app
