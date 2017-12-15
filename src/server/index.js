@@ -6,6 +6,7 @@ import renderDocument from './utils/renderDocument';
 import Root from '../app/components/Root';
 
 const app = express();
+app.disable('x-powered-by');
 
 app.get('/', (req, res) => {
 	const body = renderDocument(<Root>Hello world.</Root>);
