@@ -8,9 +8,9 @@
   "scripts": {
     "build": "yarn build:client && yarn build:server",
     "build:client": "webpack --display errors-only",
-    "build:server": "babel -d dist src",
+    "build:server": "babel -D -d dist --ignore src/client src",
     "start": "node dist/server",
-    "watch:build": "babel -w -d dist --ignore src/client src",
+    "watch:build": "babel -w -D -d dist --ignore src/client src",
     "watch:client": "webpack --display errors-only -w",
     "watch:server": "nodemon -q -w dist -i dist/public dist/server"
   },
@@ -34,7 +34,12 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
+    "modular-css-webpack": "^7.2.0",
     "nodemon": "^1.12.6",
+    "postcss-color-function": "^4.0.1",
+    "postcss-import": "^11.0.0",
+    "postcss-inline-svg": "^3.0.0",
+    "postcss-nested": "^3.0.0",
     "prettier": "1.9.2",
     "webpack": "^3.10.0"
   }
