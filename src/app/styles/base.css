@@ -1,5 +1,6 @@
 html {
 	box-sizing: border-box;
+	color: #444;
 	font: 300 16px/30px merriweather, serif;
 }
 
@@ -7,4 +8,17 @@ html {
 *:before,
 *:after {
 	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: ubuntu;
+	letter-spacing: -0.06em;
+	text-transform: uppercase;
 }

@@ -5,6 +5,7 @@ import React from 'react';
 
 import renderDocument from './utils/renderDocument';
 
+import HomePage from '../app/components/HomePage';
 import Root from '../app/components/Root';
 
 const app = express();
@@ -13,7 +14,11 @@ app.disable('x-powered-by');
 app.use(express.static(`${__dirname}/../public`));
 
 app.get('/', (req, res) => {
-	const body = renderDocument(<Root>Hello world.</Root>);
+	const body = renderDocument(
+		<Root>
+			<HomePage />
+		</Root>,
+	);
 	res.send(body);
 });
 

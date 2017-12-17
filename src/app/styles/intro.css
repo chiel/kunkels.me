@@ -1,0 +1,22 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background: url(https://kunkels.me/img/masthead-1.jpg) no-repeat center / cover;
+
+	h1 {
+		margin: 0;
+		color: #d43b76;
+		font-size: 120px;
+		line-height: 73px;
+		text-align: center;
+
+		span {
+			display: block;
+			color: #444;
+			font-size: 78px;
+		}
+	}
+}
