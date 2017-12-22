@@ -15,6 +15,7 @@
     "watch:server": "nodemon -q -w dist -i dist/public dist/server"
   },
   "dependencies": {
+    "date-fns": "^1.29.0",
     "express": "^4.16.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
