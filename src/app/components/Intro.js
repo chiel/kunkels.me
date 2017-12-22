@@ -12,7 +12,7 @@ export default function Intro() {
 			<h1>
 				Chiel <span>Kunkels</span>
 			</h1>
-			<Slides className={css.titles} loopInterval={4000}>
+			<Slides className={css.titles} loopInterval={3000}>
 				{titles.map(title => <p key={title}>{title}</p>)}
 			</Slides>
 		</section>
