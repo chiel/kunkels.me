@@ -1,7 +1,7 @@
 {
 	"presets": [
-		["env", { "targets": { "node": "current" } }],
-		"react",
-		"stage-2"
+		["@babel/env", { "targets": { "node": "current" } }],
+		"@babel/preset-react",
+		"@babel/preset-stage-2"
 	]
 }
