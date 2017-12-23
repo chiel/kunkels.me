@@ -3,7 +3,12 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 100vh;
-	padding: 40px;
+	min-height: 100vh;
+	padding: 40px 20px 20px;
 	border-top: 4px solid #d43b76;
+}
+
+.title {
+	margin-top: 0;
+	text-align: center;
 }

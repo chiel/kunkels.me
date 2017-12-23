@@ -35,7 +35,7 @@ export default function Articles() {
 
 	return (
 		<section className={css.container}>
-			<h2>Stuff I have written recently(ish)</h2>
+			<h2 className={css.title}>Stuff I have written recently(ish)</h2>
 			{articles.map(article => <ArticleSummary key={article.slug} article={article} />)}
 		</section>
 	);
