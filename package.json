@@ -12,11 +12,14 @@
     "start": "node dist/server",
     "watch:build": "babel -w -D -d dist --ignore src/client src",
     "watch:client": "webpack --display errors-only -w",
-    "watch:server": "nodemon -q -w dist -i dist/public dist/server"
+    "watch:server": "nodemon -q -e js,json,md -w dist -i dist/public dist/server"
   },
   "dependencies": {
     "date-fns": "^1.29.0",
     "express": "^4.16.2",
+    "js-yaml": "^3.11.0",
+    "markdown-it": "^8.4.1",
+    "markdown-it-front-matter": "^0.1.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
