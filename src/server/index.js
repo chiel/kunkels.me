@@ -2,8 +2,10 @@ import './utils/cssLoader';
 
 import express from 'express';
 import React from 'react';
+import { Provider } from 'react-redux';
 
 import articles from './articles';
+import createStoreMiddleware from './utils/createStoreMiddleware';
 import renderDocument from './utils/renderDocument';
 
 import HomePage from '../app/components/HomePage';
@@ -41,11 +43,16 @@ app.get('/api/articles/:slug', (req, res) => {
 	res.json(article);
 });
 
+app.use(createStoreMiddleware);
+
 app.get('/', (req, res) => {
 	const body = renderDocument(
-		<Root>
-			<HomePage />
-		</Root>,
+		<Provider store={req.store}>
+			<Root>
+				<HomePage />
+			</Root>
+		</Provider>,
+		req.store.getState(),
 	);
 	res.send(body);
 });

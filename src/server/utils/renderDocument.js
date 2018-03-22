@@ -1,7 +1,7 @@
 import { renderToString } from 'react-dom/server';
 import { Helmet } from 'react-helmet';
 
-export default function renderDocument(component) {
+export default function renderDocument(component, state) {
 	const markup = renderToString(component);
 	const helmet = Helmet.renderStatic();
 
@@ -18,6 +18,7 @@ export default function renderDocument(component) {
 	</head>
 	<body>
 		<div id="app-root">${markup}</div>
+		<script>window.INITIAL_STATE = ${JSON.stringify(state)};</script>
 		<script src="/assets/app.js"></script>
 	</body>
 </html>`;
