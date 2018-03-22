@@ -35,5 +35,7 @@ spec:
       - name: app
         image: gcr.io/kunkels-core/kunkels-site:$SHORT_SHA
         env:
+        - name: API_URL
+          value: //dev.kunkels.me/api
         - name: NODE_ENV
           value: production
