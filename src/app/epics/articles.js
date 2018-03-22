@@ -8,5 +8,5 @@ export function getArticlesEpic(action$, store, { api }) {
 		.map(({ response }) => (
 			getArticlesSuccess({ articles: response })
 		))
-		.catch(response => of(getArticlesError('Failed to fetch articles :(')));
+		.catch(() => of(getArticlesError('Failed to fetch articles :(')));
 }

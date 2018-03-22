@@ -12,6 +12,7 @@ export class ArticlesContainer extends React.PureComponent {
 	static propTypes = {
 		articles: PT.arrayOf(types.articleSummary).isRequired,
 		articlesState: types.state.isRequired,
+		dispatch: PT.func.isRequired,
 	};
 
 	componentDidMount() {

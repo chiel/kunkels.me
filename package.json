@@ -9,6 +9,7 @@
     "build": "yarn build:client && yarn build:server",
     "build:client": "webpack --display errors-only",
     "build:server": "babel -D -d dist --ignore src/client src",
+    "lint": "eslint .",
     "start": "node dist/server",
     "watch:build": "babel -w -D -d dist --ignore src/client src",
     "watch:client": "webpack --display errors-only -w",
