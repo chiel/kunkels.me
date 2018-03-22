@@ -1,4 +1,11 @@
-*
-!dist
-!package.json
-!yarn.lock
+.git
+dist
+node_modules
+.dockerignore
+.gitignore
+.k8s.yml
+Caddyfile
+cloudbuild.yml
+docker-compose.yml
+Dockerfile
+Dockerfile-dev
