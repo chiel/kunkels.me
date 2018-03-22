@@ -8,6 +8,8 @@ services:
     command: yarn watch:server
     depends_on:
     - build
+    environment:
+      API_URL: http://localhost:14728/api
     volumes:
     - .:/app
 

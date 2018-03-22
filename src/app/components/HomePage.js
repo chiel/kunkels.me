@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Articles from './Articles';
+import ArticlesContainer from './ArticlesContainer';
 import Intro from './Intro';
 
 export default function HomePage() {
 	return (
 		<React.Fragment>
 			<Intro />
-			<Articles />
+			<ArticlesContainer />
 		</React.Fragment>
 	);
 }
