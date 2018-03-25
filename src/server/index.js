@@ -3,13 +3,13 @@ import './utils/cssLoader';
 import express from 'express';
 import React from 'react';
 import { Provider } from 'react-redux';
+import { match, RouterContext } from 'react-router';
 
 import articles from './articles';
 import createStoreMiddleware from './utils/createStoreMiddleware';
 import renderDocument from './utils/renderDocument';
 
-import HomePage from '../app/components/HomePage';
-import Root from '../app/components/Root';
+import routes from '../app/routes';
 
 const app = express();
 app.disable('x-powered-by');
@@ -45,16 +45,26 @@ app.get('/api/articles/:slug', (req, res) => {
 
 app.use(createStoreMiddleware);
 
-app.get('/', (req, res) => {
-	const body = renderDocument(
-		<Provider store={req.store}>
-			<Root>
-				<HomePage />
-			</Root>
-		</Provider>,
-		req.store.getState(),
-	);
-	res.send(body);
+app.get('*', (req, res, next) => {
+	match({ routes, location: req.url }, (err, redirect, props) => {
+		if (err) return next(err);
+
+		if (redirect) {
+			return res.redirect(301, redirect.pathname + redirect.search);
+		}
+
+		if (!props) {
+			return next();
+		}
+
+		const body = renderDocument(
+			<Provider store={req.store}>
+				<RouterContext {...props} />
+			</Provider>,
+			req.store.getState(),
+		);
+		res.send(body);
+	});
 });
 
 const port = process.env.PORT || 14728;
