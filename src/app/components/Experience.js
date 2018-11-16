@@ -25,7 +25,37 @@ export default () => (
 				<p className={css.meta}>July 2016—now, Amsterdam</p>
 			</header>
 			<p>
-				Stuff about Poki.
+				Poki’s mission is to let the world play. We’re working hard to build the world’s
+				biggest playground which brings together kids of all ages, game developers and
+				advertisers in an experience that works for all our target audiences.
+			</p>
+			<p>
+				When I started at Poki, the product that was currently live was a big PHP-monolith
+				which had been slowly tearing apart at the seams for a while due to changing
+				requirements and inflexible code. My first order of business was to envision a new
+				stack which would allow us to split the front- and back-end and allow us to cater
+				to the business’ needs better.
+			</p>
+			<p>
+				The rewrite was purely intended as a technical rewrite to see if our newly chosen
+				tech stack was feasible for production use. We rewrote the backend in Go using a
+				microservice architecture hosted on Google Cloud Platform’s Kubernetes Engine.
+				The front-end was rewritten using primarily React and Redux.
+			</p>
+			<p>
+				This first “phase” went live for the first couple of sites sometime in march 2017
+				after many months of painstakingly testing things and ensuring revenues were up to
+				par and was mostly concluded by the end of 2017.
+			</p>
+			<p>
+				After this, we moved on to creating a project dubbed “playground”, in which we try
+				to put our users first and give them a great experience while also allowing brands
+				and game developers to add to, not detract from, their experience.
+			</p>
+			<p>
+				While React is still a big player in this rewrite, RxJS is also being used which
+				allows us to split out business logic from the React components, allowing us to
+				better test this logic.
 			</p>
 
 			<header className={css.header}>
