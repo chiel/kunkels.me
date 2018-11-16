@@ -1,0 +1,10 @@
+.tldr {
+	font-size: 12px;
+	text-align: center;
+}
+
+@media (min-width: 420px) {
+	.tldr {
+		font-size: 14px;
+	}
+}

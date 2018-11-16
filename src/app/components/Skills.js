@@ -4,6 +4,8 @@ import React from 'react';
 import Content from './Content';
 import Header from './Header';
 
+import css from '../styles/skills.css';
+
 export default () => (
 	<React.Fragment>
 		<Header background="/assets/bg-values-skills.jpg">
@@ -11,6 +13,11 @@ export default () => (
 		</Header>
 
 		<Content>
+			<p className={css.tldr}>
+				<strong>TL;DR:</strong> All-round developer specialised in JavaScript, React,
+				RxJS and software architecture.
+			</p>
+
 			<p>
 				As an all-round developer I currently spend most of my time coding in JavaScript,
 				HTML, CSS, Go and various database systems.

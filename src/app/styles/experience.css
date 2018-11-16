@@ -1,11 +1,5 @@
 .header {
-	display: flex;
-	align-items: baseline;
-	margin: 72px 0 0;
-
-	h3 {
-		margin: 0 24px 0 0;
-	}
+	margin: 56px 0 0;
 
 	&:first-child {
 		margin-top: 0;
@@ -13,9 +7,23 @@
 }
 
 .meta {
-	line-height: 16px;
 	color: #aaa;
 	font-size: 10px;
 	font-style: italic;
-	text-align: center;
+}
+
+@media (min-width: 420px) {
+	.header {
+		display: flex;
+		align-items: baseline;
+		margin-top: 72px;
+
+		h3 {
+			margin: 0 24px 0 0;
+		}
+	}
+
+	.meta {
+		line-height: 16px;
+	}
 }

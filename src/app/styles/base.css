@@ -4,7 +4,7 @@ html {
 	background: v.pink;
 	box-sizing: border-box;
 	color: #444;
-	font: 300 18px/36px merriweather, serif;
+	font: 300 14px/28px merriweather, serif;
 }
 
 *,
@@ -44,7 +44,7 @@ p {
 	margin: 0;
 
 	+ p {
-		margin-top: 36px;
+		margin-top: 28px;
 	}
 }
 
@@ -54,5 +54,16 @@ a {
 
 	&:hover {
 		color: v.pink;
+	}
+}
+
+@media (min-width: 420px) {
+	html {
+		font-size: 14px;
+		line-height: 28px;
+	}
+
+	p + p {
+		margin-top: 36px;
 	}
 }
