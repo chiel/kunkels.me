@@ -1,5 +1,20 @@
 import { getArticles, getArticlesError, getArticlesSuccess } from '../actions/articles';
 
+// const articles = [
+// 	{
+// 		title: 'Setting up Google Cloud Container Builder',
+// 		image: 'https://static.pexels.com/photos/225769/pexels-photo-225769.jpeg',
+// 	},
+// 	{
+// 		title: 'Development inside Docker',
+// 		image: 'https://static.pexels.com/photos/225769/pexels-photo-225769.jpeg',
+// 	},
+// 	{
+// 		title: 'Rearchitecting kunkels.me',
+// 		image: 'https://static.pexels.com/photos/225769/pexels-photo-225769.jpeg',
+// 	},
+// ];
+
 const initialState = {
 	data: null,
 	done: false,

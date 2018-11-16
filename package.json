@@ -42,6 +42,7 @@
     "@babel/preset-stage-2": "^7.0.0-beta.35",
     "babel-eslint": "^8.0.3",
     "babel-loader": "^8.0.0-beta.0",
+    "copy-webpack-plugin": "^4.6.0",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.7.0",

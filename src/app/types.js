@@ -1,5 +1,14 @@
 import PT from 'prop-types';
 
+export const article = PT.shape({
+	body: PT.string,
+	date: PT.instanceOf(Date),
+	excerpt: PT.string,
+	slug: PT.string,
+	tags: PT.arrayOf(PT.string),
+	title: PT.string,
+});
+
 export const articleSummary = PT.shape({
 	date: PT.instanceOf(Date),
 	excerpt: PT.string,

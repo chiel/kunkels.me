@@ -1,12 +1,20 @@
+@value * as v from './vars.css';
+
 .article {
 	max-width: 900px;
 	margin-top: 40px;
-	padding: 16px 20px;
 	border-radius: 4px;
 	transform: translateZ(0);
 	transition:
 		box-shadow .2s ease-out,
 		transform .2s ease-out;
+}
+
+.link {
+	display: block;
+	padding: 16px 20px;
+	color: #444;
+	text-decoration: none;
 }
 
 .title {
@@ -39,7 +47,7 @@
 		transition: background-color .2s ease-out;
 
 		&:hover {
-			background-color: #d43b76;
+			background-color: v.pink;
 		}
 	}
 }

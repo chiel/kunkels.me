@@ -1,4 +1,5 @@
 /* eslint-disable global-require */
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CSSPlugin = require('modular-css-webpack/plugin');
 
 module.exports = {
@@ -34,5 +35,11 @@ module.exports = {
 				require('postcss-inline-svg')(),
 			],
 		}),
+		new CopyWebpackPlugin([
+			{
+				from: 'src/app/images/',
+				to: './dist/public/assets/',
+			},
+		]),
 	],
 };

@@ -7,7 +7,7 @@ date: 2014-04-14 23:33:38
 
 This article is part of a series; the topics covered in this article might not
 make all that much sense without reading the first part, so feel free to [check
-it out here]({% post_url 2014-04-12-dotfiles-101 %}).
+it out here](/dotfiles-101).
 
 In this part of the series, we'll be exploring `bash` a bit more, trying to
 create a basic prompt which will contain some practical information. So without

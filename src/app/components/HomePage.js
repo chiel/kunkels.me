@@ -1,13 +1,15 @@
 import React from 'react';
 
-import ArticlesContainer from './ArticlesContainer';
+import About from './About';
+import Experience from './Experience';
 import Intro from './Intro';
+import Skills from './Skills';
 
-export default function HomePage() {
-	return (
-		<React.Fragment>
-			<Intro />
-			<ArticlesContainer />
-		</React.Fragment>
-	);
-}
+export default () => (
+	<React.Fragment>
+		<Intro />
+		<About />
+		<Skills />
+		<Experience />
+	</React.Fragment>
+);

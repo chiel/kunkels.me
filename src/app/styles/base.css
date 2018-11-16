@@ -1,4 +1,7 @@
+@value * as v from './vars.css';
+
 html {
+	background: v.pink;
 	box-sizing: border-box;
 	color: #444;
 	font: 300 18px/36px merriweather, serif;
@@ -11,23 +14,45 @@ html {
 }
 
 body {
-	margin: 0;
+	margin: 4px 0;
+	background: #fff;
 }
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
 	margin: 36px 0 0;
 	font-family: ubuntu;
 	letter-spacing: -0.06em;
 	text-transform: uppercase;
 }
 
-p {
-	margin: 36px 0 0;
+h1 {
+	font-size: 36px;
+}
 
-	&:first-of-type {
-		margin-top: 0;
+h2 {
+	font-size: 27px;
+	letter-spacing: .2em;
+}
+
+h3 {
+	font-size: 21px;
+}
+
+p {
+	margin: 0;
+
+	+ p {
+		margin-top: 36px;
+	}
+}
+
+a {
+	color: #000;
+	transition: color .1s ease-out;
+
+	&:hover {
+		color: v.pink;
 	}
 }

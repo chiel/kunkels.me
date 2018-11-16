@@ -4,7 +4,7 @@ import Slides from './Slides';
 
 import css from '../styles/intro.css';
 
-const titles = ['full-stack developer', 'devops enthusiast'];
+const titles = ['full-stack developer', 'devops enthusiast', 'rxjs fanboy', 'gaming afficionado'];
 
 export default class Intro extends React.PureComponent {
 	constructor() {

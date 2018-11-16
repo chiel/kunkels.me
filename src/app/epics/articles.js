@@ -1,6 +1,26 @@
 import { of } from 'rxjs/observable/of';
 
-import { getArticles, getArticlesError, getArticlesSuccess } from '../actions/articles';
+import {
+	getArticle,
+	getArticleError,
+	getArticleSuccess,
+	getArticles,
+	getArticlesError,
+	getArticlesSuccess,
+} from '../actions/articles';
+
+export function getArticleEpic(action$, store, { api }) {
+	return action$.ofType(getArticle.type)
+		.switchMap(({ slug }) => (
+			api(`/articles/${slug}`)
+				.map(({ response }) => (
+					getArticleSuccess({ article: response, slug })
+				))
+				.catch(() => of(
+					getArticleError({ slug, error: 'Failed to get article :(' }),
+				))
+		));
+}
 
 export function getArticlesEpic(action$, store, { api }) {
 	return action$.ofType(getArticles.type)

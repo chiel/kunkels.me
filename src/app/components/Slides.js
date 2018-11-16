@@ -35,6 +35,10 @@ export default class Slides extends React.PureComponent {
 		}
 	}
 
+	componentWillUnmount() {
+		clearTimeout(this.timeout);
+	}
+
 	goto(index) {
 		if (index > this.props.children.length - 1) {
 			index = 0;
@@ -52,7 +56,7 @@ export default class Slides extends React.PureComponent {
 	}
 
 	queue() {
-		setTimeout(() => {
+		this.timeout = setTimeout(() => {
 			this.next();
 			this.queue();
 		}, this.props.loopInterval);
