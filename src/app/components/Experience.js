@@ -33,7 +33,16 @@ export default () => (
 				<p className={css.meta}>November 2015—July 2016, Amsterdam</p>
 			</header>
 			<p>
-				Stuff about Label A.
+				Label A is an agency located in the heart of Amsterdam. At Label A I worked as
+				a lead developer on a variety of client projects using various JavaScript
+				libraries.  I played a part in bringing React into the fold to allow the other
+				front-end developers and myself to be more productive.
+			</p>
+			<p>
+				The biggest project I worked on during my time here was Grow-bee&mdash;a social
+				network and e-learning tool aimed at businesses. It had the typical social features
+				you'd expect, such as making posts and sharing images, but also had built in tools
+				to create questionnaires for employees.
 			</p>
 
 			<header className={css.header}>
