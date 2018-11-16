@@ -59,8 +59,8 @@ a {
 
 @media (min-width: 420px) {
 	html {
-		font-size: 14px;
-		line-height: 28px;
+		font-size: 18px;
+		line-height: 36px;
 	}
 
 	p + p {
