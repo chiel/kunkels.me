@@ -1,4 +1,7 @@
 {
 	"private": true,
-	"name": "kunkels.me"
+	"name": "kunkels.me",
+	"devDependencies": {
+		"prettier": "^3.4.2"
+	}
 }
