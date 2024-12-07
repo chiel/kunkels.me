@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches:
+
+jobs:
+  install:
+    name: Install dependencies
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        id: cache
+        with:
+          key: node-modules-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          path: node_modules
+      - uses: actions/setup-node@v4
+        if: steps.cache.outputs.cache-hit != 'true'
+        with:
+          node-version: 22
+      - uses: pnpm/action-setup@v4
+        if: steps.cache.outputs.cache-hit != 'true'
+        with:
+          run_install: true
+
+  lint:
+    name: Lint code
+    runs-on: ubuntu-24.04
+    needs:
+      - install
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          key: node-modules-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          path: node_modules
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: pnpm/action-setup@v4
+      - name: Lint
+        run: pnpm run lint
