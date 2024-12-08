@@ -2,7 +2,10 @@
 	"private": true,
 	"name": "kunkels.me",
 	"scripts": {
-		"lint": "eslint ."
+		"build": "vite build",
+		"lint": "eslint .",
+		"preview": "vite preview",
+		"start": "vite"
 	},
 	"packageManager": "pnpm@^9.14.4",
 	"devDependencies": {
@@ -12,6 +15,7 @@
 		"eslint-plugin-prettier": "^5.2.1",
 		"prettier": "^3.4.2",
 		"typescript": "^5.7.2",
-		"typescript-eslint": "^8.17.0"
+		"typescript-eslint": "^8.17.0",
+		"vite": "^6.0.3"
 	}
 }

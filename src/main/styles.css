@@ -1,0 +1,43 @@
+:root {
+	--c-background: #fff;
+	--c-primary: #d43b76;
+	--c-text: #444;
+	--l-spacing: 24px;
+}
+
+html {
+	background: var(--c-background);
+	color: var(--c-text);
+	font:
+		400 16px / var(--l-spacing) 'ubuntu mono',
+		monospace;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+p + p {
+	margin-top: var(--l-spacing);
+}
+
+a {
+	color: var(--c-text);
+	transition: color 0.2s ease-out;
+
+	&:hover {
+		color: var(--c-primary);
+	}
+}
+
+.about {
+	max-width: 40rem;
+	margin: 150px 0 0;
+	padding: var(--l-spacing);
+}
