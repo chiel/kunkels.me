@@ -25,7 +25,7 @@ jobs:
           run_install: true
 
   lint:
-    name: Lint code
+    name: Lint
     runs-on: ubuntu-24.04
     needs:
       - install
@@ -41,3 +41,21 @@ jobs:
       - uses: pnpm/action-setup@v4
       - name: Lint
         run: pnpm run lint
+
+  build:
+    name: Build
+    runs-on: ubuntu-24.04
+    needs:
+      - install
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          key: node-modules-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          path: node_modules
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: pnpm/action-setup@v4
+      - name: Build
+        run: pnpm run build
