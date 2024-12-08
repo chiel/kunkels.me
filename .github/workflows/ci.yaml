@@ -59,3 +59,35 @@ jobs:
       - uses: pnpm/action-setup@v4
       - name: Build
         run: pnpm run build
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: dist
+
+  build-docker:
+    name: Build docker image
+    runs-on: ubuntu-24.04
+    needs:
+      - build
+    permissions:
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: dist
+      - name: Log into GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push image
+        uses: docker/build-push-action@v3
+        with:
+          push: ${{ github.ref == 'refs/heads/main' }}
+          tags: ghcr.io/chiel/kunkels.me:${{ github.sha }}
+          context: .
