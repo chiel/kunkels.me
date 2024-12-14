@@ -91,3 +91,20 @@ jobs:
           push: ${{ github.ref == 'refs/heads/main' }}
           tags: ghcr.io/chiel/kunkels.me:${{ github.sha }}
           context: .
+
+  deploy:
+    name: Deploy to kubernetes
+    runs-on: ubuntu-24.04
+    needs:
+      - build-docker
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-kubectl@v4
+      - name: Generate kubernetes manifest
+        run: |
+          export RELEASE="${{ github.sha }}"
+          envsubst < .k8s.template.yaml >> .k8s.yaml
+      - name: Create .kubeconfig
+        run: echo "${{ secrets.KUBECONFIG }}" > .kubeconfig
+      - name: Apply kubernetes manifests
+        run: kubectl --kubeconfig=.kubeconfig apply -f .k8s.yaml
